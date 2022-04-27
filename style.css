@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/*navbar*/
+.top-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #802000;
+    color: rgb(255, 235, 235);
+    padding: 0.5rem 1rem;
+}
+
+.top-nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+ul li{
+    padding: 0.5rem 1rem;
+}
+
+
+/*banner*/
+/*banner image*/
+.welcome-header{
+    background: linear-gradient(
+      rgba(255, 236, 236, 0.664), 
+      rgba(61, 15, 15, 0.411)
+      ),
+      url("visuals/pancake-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #583b05;
+}
+
+/*banner title*/
+.title-special{
+    font-size: 60px;
+    color: #802000;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.header-title{
+    padding: 2rem;
+
+}
+
+.header-title h1{
+    font-size: 60px;
+    margin: 2rem 2rem 0rem 2rem;
+    line-height: 5rem;
+}
+
+/*banner content*/
+.header-content{
+    padding: 2rem;
+    color: #972510;
+
+}
+
+.header-content h4{
+    width: 60%;
+    font-size: 20px;
+    margin: 0rem 2rem 2rem 2rem;
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+
+/*banner button style*/
+.header-content button{
+    margin: 0.5rem 2rem 2rem 2.2rem;
+    display: inline-block;
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(230, 100, 80);
+    font-size: 14px;
+    height: 38px;
+    padding: 8px 24px;
+    border-radius: 50px;
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: 0 4px 11px 0 rgba(177, 11, 11, 0.15), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    transition: all .2s ease-out;
+}
+
+.header-content button:hover{
+   box-shadow: inset 0px 0px 5px #979393;
+}
+    
+/*Media Query for : banner title, content and button*/
+@media only screen and (max-width: 900px) {
+    .header-title h1{
+        font-size: 40px;
+        margin: 1rem 1rem 0rem 1rem;
+        line-height: 3rem;
+    }
+    .title-special{
+        font-size: 40px;
+    }
+    .header-content h4{
+        font-size: 15px;
+        margin: 0rem 1rem 0rem 1rem;
+        line-height: 1.5rem;
+    }
+    .header-content button{
+        margin: 1rem 2rem 2rem 1rem;
+    }
+}
+
