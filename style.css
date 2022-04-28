@@ -8,10 +8,10 @@
 .top-nav{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #802000;
-    color: rgb(255, 235, 235);
-    padding: 0.5rem 1rem;
+    color: antiquewhite;
+    padding: 1rem 1rem;
 }
 
 .top-nav-links{
@@ -23,6 +23,77 @@
 
 ul li{
     padding: 0.5rem 1rem;
+}
+
+ul li a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+/*Login dropdown*/
+
+.dropdown-content{
+    position: absolute;
+    display: none;
+    top: 90px;
+    z-index: 1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 20px 30px;
+    background-color: #f5f5fa;
+    color: #583b05;
+    border: 5px solid rgb(160, 137, 137);
+}
+
+/* .link-login:hover .dropdown-content{
+    display: block;
+    transition-delay: 0s;
+} */
+
+
+input[type=email] {
+    width: 100%;
+    padding: 8px 5px;
+    margin: 5px 0;
+    margin-top: 10px;
+    display: block;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 8px 5px;
+    margin: 5px 0;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.user-input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-welcome {
+    /*border: 5px solid red;*/
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.form-button {
+    margin-bottom: 10px;
+    background-color: #972510;
+    color: antiquewhite;
+    border-radius: 5px;
+    padding: 5px;
+}
+.create-member{
+    display: block;
+    font-size: small;
+    text-align: center;
+}
+.create-member a{
+    color: blue;
 }
 
 
@@ -38,38 +109,38 @@ ul li{
     background-repeat: no-repeat;
     background-size: cover;
     color: #583b05;
+    height: 60%;
 }
 
 /*banner title*/
 .title-special{
     font-size: 60px;
-    color: #802000;
+    color: #ff4655;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
 .header-title{
-    padding: 2rem;
-
+    padding: 2rem 2rem 1rem;
 }
 
 .header-title h1{
     font-size: 60px;
-    margin: 2rem 2rem 0rem 2rem;
+    margin: 2rem 2rem 0rem 5rem;
     line-height: 5rem;
 }
 
 /*banner content*/
 .header-content{
-    padding: 2rem;
+    padding: 1rem 2rem 2rem;
     color: #972510;
 
 }
 
 .header-content h4{
-    width: 60%;
-    font-size: 20px;
-    margin: 0rem 2rem 2rem 2rem;
+    width: 50%;
+    font-size: 25px;
+    margin: 0rem 2rem 2rem 5rem;
     line-height: 1.5rem;
     text-align: justify;
 }
@@ -77,7 +148,7 @@ ul li{
 
 /*banner button style*/
 .header-content button{
-    margin: 0.5rem 2rem 2rem 2.2rem;
+    margin: 0.5rem 2rem 2rem 5rem;
     display: inline-block;
     text-transform: uppercase;
     outline: 0;
@@ -85,7 +156,7 @@ ul li{
     cursor: pointer;
     font-weight: 600;
     color: rgb(230, 100, 80);
-    font-size: 14px;
+    font-size: 15px;
     height: 38px;
     padding: 8px 24px;
     border-radius: 50px;
