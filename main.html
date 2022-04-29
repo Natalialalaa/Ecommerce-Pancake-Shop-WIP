@@ -17,7 +17,7 @@
             <a href="main.html"><img src="visuals/pancake-icon.png" alt="company-logo" height="50" width="50"></a>
             <ul class="top-nav-links">
                 <li class="link-history"><a href="#">Our History</a></li>
-                <li class="link-login" id="hide-dropdown">My Account
+                <li class="link-login">My Account
                     <div class="dropdown-content">
                         <!--login form-->
                         <form class="content-form">
@@ -43,7 +43,7 @@
         
         <div class="welcome-header">
             <div class="header-title">
-                <h1>Our Pancakes are <span class="title-special">special</span>,<br>
+                <h1>Our Pancakes are <span class="title-special"><br>special</span>,<br>
                     just like <span class="title-special">YOU</span> !
                 </h1>
             </div>
@@ -51,8 +51,33 @@
                 <h4>First bakery shop in the galaxy since 1998, we provide lorem ipsum dolor sit amet 
                     consectetur adipisicing. Quas ex atque ducimus illum repellendus vnua repellat, 
                     ipsam asperiores eaque doloremque deserunt commodi veritatis sed aliquid expedita.
+                    Reprehenderit, quia. Quo neque error repudiandae fuga, ipsa laudantium molestias eos 
+                    sapiente officiis modi.
                 </h4>
                 <button>Create my pancakes</button>
+            </div>
+        </div>
+        <div class="header-qualities">
+            <div class="sub-qualities">
+                <img src="Visuals/fruits.png" alt="fresh ingredients">
+                <div class="txt">
+                    <h3>Made by fresh ingredients</h3>
+                    <P>We only use fresh and organic products delivered every morning</P>
+                </div>
+            </div>
+            <div class="sub-qualities">
+                <img src="Visuals/quality.png" alt="best quality">
+                <div class="txt">
+                    <h3>Best quality guarantee</h3>
+                    <P>Pancake palace is the 1st bakery specialized in custom pancakes</P>
+                </div>
+            </div>
+            <div class="sub-qualities">
+                <img src="Visuals/stopwatches.png" alt="fast delivery">
+                <div class="txt">
+                    <h3>30 minutes delivery</h3>
+                    <p>Everything you order will be delivered quickly right to you door</p>
+                </div>
             </div>
         </div>
     </header>
@@ -60,9 +85,15 @@
     <main class="pancakes-personalized">
         <h2>Get your personalized pancakes by a click.</h2>
         <article class="pancake-sizes">
-            <h3>Sizes</h3>
-            <div>
-
+            <div class="personalized-style-set">
+                <div class="slidecontainer">
+                    <p>Value: <span id="demo"></span></p>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+                <h3>Sizes</h3>
+            </div>
+            <div class ="personalized-style-pic">
+                <img src="Visuals/pancake-size.png" sizes="">
             </div>
         </article>
         <article class="pancake-flavours">

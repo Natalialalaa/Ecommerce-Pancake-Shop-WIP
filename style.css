@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #802000;
+    background-color: #811a00;
     color: antiquewhite;
     padding: 1rem 1rem;
 }
@@ -92,6 +92,12 @@ input[type=password] {
     font-size: small;
     text-align: center;
 }
+@media only screen and (max-width: 600px) {
+    .user-input{
+        display: block;
+        width: max-content;
+    }
+}
 .create-member a{
     color: blue;
 }
@@ -100,28 +106,30 @@ input[type=password] {
 /*banner*/
 /*banner image*/
 .welcome-header{
-    background: linear-gradient(
-      rgba(255, 236, 236, 0.664), 
-      rgba(61, 15, 15, 0.411)
+    background: linear-gradient( 
+     to bottom right,
+      rgba(204, 135, 7, 0.445),
+      rgba(255, 255, 255, 0.486)
       ),
       url("visuals/pancake-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #583b05;
+    color: #664200;
     height: 60%;
 }
 
 /*banner title*/
 .title-special{
     font-size: 60px;
-    color: #ff4655;
+    color: #771a1a;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
 .header-title{
     padding: 2rem 2rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .header-title h1{
@@ -133,19 +141,22 @@ input[type=password] {
 /*banner content*/
 .header-content{
     padding: 1rem 2rem 2rem;
-    color: #972510;
-
 }
 
 .header-content h4{
-    width: 50%;
-    font-size: 25px;
+    width: 40%;
+    font-size: 20px;
     margin: 0rem 2rem 2rem 5rem;
     line-height: 1.5rem;
     text-align: justify;
+    color: #8a573a;
 }
 
-
+@media only screen and (max-width: 700px) {
+    .header-content h4 {
+        width: 60%;
+    }
+}
 /*banner button style*/
 .header-content button{
     margin: 0.5rem 2rem 2rem 5rem;
@@ -189,3 +200,90 @@ input[type=password] {
     }
 }
 
+/*sub header*/
+
+.header-qualities{
+    background-color: rgb(199, 178, 111);
+    color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #523500;
+}
+.sub-qualities{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+}
+.sub-qualities img{
+    width:100px; 
+    height:100px;
+}
+
+div .txt{
+    padding-left: 15px;
+}
+
+
+
+@media only screen and (max-width: 850px) {
+    .header-qualities{
+        display: block;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .sub-qualities{
+        padding: 20px;
+    }
+    .sub-qualities img{
+        width:60px; 
+        height:60px;
+    }
+}
+
+
+/*main : personalized pancakes*/
+
+.pancakes-personalized{
+    background-color: rgb(255, 230, 193);
+}
+.pancakes-personalized h2 {
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #412700;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+/*personalized 1*/
+.personalized-style-set h3{
+    font-size: 30px;
+    color: #e44800;
+
+}
+.personalized-style-set {
+    transform: rotate(90deg); 
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+}
+
+.personalized-style-pic img{
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+
+
+
+
+/*personalized 2*/
+
+
+/*personalized 3*/
+
+
+/*footer: contacts*/
