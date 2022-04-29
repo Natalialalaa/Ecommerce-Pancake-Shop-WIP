@@ -214,7 +214,7 @@ input[type=password] {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 30px;
+    padding: 40px;
 }
 .sub-qualities img{
     width:100px; 
@@ -250,37 +250,79 @@ div .txt{
 }
 .pancakes-personalized h2 {
     text-align: center;
-    font-size: 32px;
+    font-size: 40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #412700;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 50px;
 }
+
+
 
 /*personalized 1*/
 .personalized-style-set h3{
-    font-size: 30px;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    letter-spacing: 10px;
     color: #e44800;
-
 }
-.personalized-style-set {
-    transform: rotate(90deg); 
-    height: fit-content;
-    width: fit-content;
-    padding: 20px;
+.slidecontainer {
+    transform: rotate(90deg);
 }
 
-.personalized-style-pic img{
-    margin: 20px;
-    width: 400px;
-    height: 400px;
+.pancake-sizes {
+    border: 5px solid rgb(146, 71, 0);
+    margin: 30px;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
+.sizes-sub-2 img{
+    width: 500px;
+    height: 500px;
+    margin-left: 50px;
+}
+.sizes-sub-2{
+    margin-top: 0px;
+}
 
-
+.sizes-sub-1{
+    margin-top: 100px;
+    margin-right: 200px;
+}
 
 
 /*personalized 2*/
+
+.pancake-flavours{
+    border: 5px solid rgb(146, 71, 0);
+    margin: 30px;
+    padding: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pancake-flavours h3{
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    letter-spacing: 10px;
+    color: #e44800;
+}
+
+.flavours-sub-1{
+    transform: rotate(90deg);
+    width: fit-content;
+}
+
+.flavours-sub-2 img{
+    width: 600px;
+    height: 400px; 
+}
+
 
 
 /*personalized 3*/

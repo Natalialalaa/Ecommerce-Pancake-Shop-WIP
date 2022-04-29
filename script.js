@@ -16,6 +16,9 @@ window.addEventListener("click", function(e) {
   }
 });
 
+
+
+/*main article 1: pancake image sizing */
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
