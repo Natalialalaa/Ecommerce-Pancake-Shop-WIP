@@ -86,16 +86,14 @@
         <h2>Get your personalized pancakes by a click</h2>
 
         <article class="pancake-sizes">
-            <div class="sizes-sub-1 personalized-style-set">
-                <div class="slidecontainer">
-                    <p>Value: <span id="demo"></span></p>
-                    <input type="range" step ="3" min="3" max="9" value="6" class="slider" id="myRange">
-                    <h3>SIZES</h3>
+                <div class="sizes-sub-1 personalized-style-set">
+                    <div class="slidecontainer">
+                        <p><span id="slide-value">Normal</span></p>
+                        <input type="range" value="2" step ="1" min="1" max="3" onchange="sizingPancake()" class="slider" id="myRange">
+                        <h3>SIZES</h3>
+                    </div>
+                        <img src="Visuals/pancake-size.png" class="sizes-sub-2" id="sizes-img">
                 </div>
-            </div>
-            <div class="sizes-sub-2 sizes-img">
-                <img src="Visuals/pancake-size.png" sizes="500px">
-            </div>
         </article>
 
         <article class="pancake-flavours">
@@ -105,13 +103,12 @@
             <div class="flavours-sub-1">
                 <h3>FLAVOURS</h3>
                 <form action="">
-                    <input type="radio" id="" name="" value="">
-                    <label for="">Matcha</label>
-                    <input type="radio" id="" name="" value="">
-                    <label for="">Chocolate</label>
-                    <input type="radio" id="" name="" value="">
-                    <label for="">Strawberry</label>
-
+                    <input type="radio" id="matcha" name="button-value" value="matcha">
+                    <label for="matcha">Matcha</label>
+                    <input type="radio" id="chocolate" name="button-value" value="chocolate">
+                    <label for="chocolate">Chocolate</label>
+                    <input type="radio" id="strawberry" name="button-value" value="strawberry">
+                    <label for="strawberry">Strawberry</label>
                    <!-- <input type="submit" value="submit">-->
                 </form>
             </div>
@@ -121,7 +118,27 @@
         <article class="pancake-toppings">
             <h3>TOPPINGS</h3>
             <div>
-
+                <div id="toppings-button">
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('Candies')"> Candies</button>
+                    <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+                    <button class="btn" onclick="filterSelection('syrups')"> Syrups</button>
+                  </div>
+                  
+                  <div class="topping-variants">
+                    <div class="filterDiv syrups"></div>
+                    <div class="filterDiv syrups fruits">Orange</div>
+                    <div class="filterDiv syrups">Honey</div>
+                    <div class="filterDiv syrups">Strawberry</div>
+                    <div class="filterDiv syrups candies">Chantilly</div>
+                    <div class="filterDiv syrups">Vanilla</div>
+                    <div class="filterDiv candies">MM's</div>
+                    <div class="filterDiv candies">Kinder</div>
+                    <div class="filterDiv fruits">Melon</div>
+                    <div class="filterDiv fruits candies">Milky Way</div>
+                    <div class="filterDiv fruits">Banana</div>
+                    <div class="filterDiv fruits">Lemon</div>
+                  </div>
             </div>
         </article>
     </main>
