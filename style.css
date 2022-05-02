@@ -6,10 +6,11 @@
 
 /*navbar*/
 .top-nav{
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #811a00;
+    background-color: rgb(202, 68, 27);
     color: antiquewhite;
     padding: 1rem 1rem;
 }
@@ -121,8 +122,9 @@ input[type=password] {
 
 /*banner title*/
 .title-special{
+    font-family: cursive;
     font-size: 60px;
-    color: #771a1a;
+    color: rgb(202, 68, 27);
     text-decoration: underline;
     text-transform: uppercase;
 }
@@ -245,13 +247,21 @@ div .txt{
 
 /*main : personalized pancakes*/
 
-.pancakes-personalized{
-
+main {
     background-color: #e5e5f7;
-opacity: 0.8;
-background-image: radial-gradient(#a9a9a9 1.05px, #e5e5f7 1.05px);
-background-size: 21px 21px;
+    opacity: 0.8;
+    background-image: radial-gradient(#a9a9a9 1.05px, #e5e5f7 1.05px);
+    background-size: 21px 21px;
 }
+
+.personalized-result {
+    padding: 80px;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: radial-gradient(#a9a9a9 1.05px, #e5e5f7 1.05px);
+    background-size: 21px 21px;
+}
+
 .pancakes-personalized h2 {
     text-align: center;
     font-size: 40px;
@@ -276,7 +286,8 @@ background-size: 21px 21px;
 }
 
 .pancake-sizes {
-    border: 8px outset rgb(133, 112, 93);
+    border: 10px outset rgb(133, 112, 93);
+    background-color: rgba(217, 193, 170, 0.682);
     margin: 40px 100px;
     padding: 10px 50px 150px;
     display: flex;
@@ -302,10 +313,14 @@ background-size: 21px 21px;
     margin-right: 200px;
 }
 
+input[type=range] {
+    padding: 5px;
+}
 
 /*personalized 2*/
 .pancake-flavours{
-    border: 8px outset rgb(133, 112, 93);
+    border: 10px outset rgb(133, 112, 93);
+    background-color: rgba(217, 193, 170, 0.682);
     margin: 40px 100px;
     padding: 86px 80px 85px;
     display: flex;
@@ -328,7 +343,7 @@ background-size: 21px 21px;
 }
 
 .flavours-sub-2 img{
-    width: 300px;
+    width: 350px;
     height: 200px;
 }
 
@@ -336,6 +351,17 @@ background-size: 21px 21px;
     color: #6b422a;
     font-weight: bold;
 }
+
+input[type=radio] + label{
+    padding: 5px;
+}
+
+/* issues fix
+.slidecontainer{
+    border: #771a1a solid 3px;
+}
+*/
+
 
 /*personalized 3*/
 .filterDiv {
@@ -352,22 +378,73 @@ display: block;
 }
 
 .topping-variants {
-margin-top: 20px;
-overflow: hidden;
-display: flex;
-align-items: center;
-justify-content: space-around;
+    background-color: rgba(255, 209, 139, 0.493);
+    border: 4px inset rgb(133, 112, 93);
+    height: 200px;
+    width: 500px;
+    overflow-y: auto;
+    text-align: center;
 }
 
+.topping-variants .filterDiv{
+    border: 3px outset rgb(133, 112, 93);
+    display: inline-block;
+    margin: 5px;
+}
 
-.pancake-toppings{
-    border: 8px outset rgb(133, 112, 93);
-    margin: 40px 100px;
+.pancake-toppings {
+    border: 10px outset rgb(133, 112, 93);
+    background-color: rgba(217, 193, 170, 0.682);
+    margin: 40px 100px 0px;
     padding: 86px 80px 85px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+
+.pancake-toppings h3{
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 7px;
+    padding: 1rem;
+    color: #ff702d;
+    /*transform: rotate(270deg)*/;
+ 
+}
+
+.toppings-head {
+    margin-left: 20%;
+    /*border: #412700 solid 5px;*/
+    transform: rotate(270deg);
+}
+
+
+@media only screen and (max-width: 700px) {
+    .topping-variants {
+        background-color: rgba(255, 209, 139, 0.493);
+        border: 4px inset rgb(133, 112, 93);
+        height: 200px;
+        width: 250px;
+    }
+    
+}
+@media (max-width: 900px) {
+    .toppings-head {
+        transform: rotate(0deg);
+    }
+    .pancake-toppings {
+        display: block;
+    }
+}
+
+
+
+
+
+
 
 /* Style the buttons */
 .btn {
@@ -424,7 +501,7 @@ color: white;
 
 
 .footer-distributed{
-	background: #666;
+	background: rgb(138, 32, 0);
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;

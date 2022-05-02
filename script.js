@@ -42,12 +42,14 @@ slider.oninput = sizingPancake = () => {
 /*main article 2: flavors image -> 3 images changing -> Radio button value / checked */
 
 const changingToppings = () => {
+  const flavorsPic = document.getElementById("flavours-pic");
+
   if (document.getElementById("matcha").checked) {
-  document.getElementById("flavours-pic").src = "Visuals/flavour-matcha.png";
+  flavorsPic.src = "Visuals/flavour-matcha.png";
   } else if (document.getElementById("chocolate").checked) { 
-  document.getElementById("flavours-pic").src = "Visuals/flavour-chocolate.png";
+  flavorsPic.src = "Visuals/flavour-chocolate.png";
   }  else if (document.getElementById("strawberry").checked) { 
-    document.getElementById("flavours-pic").src = "Visuals/flavour-strawberry.png";
+  flavorsPic.src = "Visuals/flavour-strawberry.png";
   }
 }
 
@@ -59,3 +61,4 @@ const changingToppings = () => {
 // Show filtered elements
 // Hide elements that are not selected
 // Add active class to the current control button (highlight it)
+

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pancake Palace</title>
-    <link rel="icon" type="image/png" href="visuals/pancake-icon.png">
+    <link rel="icon" type="image/png" href="visuals/icon-pancake.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,7 +14,7 @@
     <header>
         <nav class="top-nav">
             <h3>Pancake Palace</h3>
-            <a href="main.html"><img src="visuals/pancake-icon.png" alt="company-logo" height="50" width="50"></a>
+            <a href="main.html"><img src="visuals/icon-pancake.png" alt="company-logo" height="50" width="50"></a>
             <ul class="top-nav-links">
                 <li class="link-history"><a href="#">Our History</a></li>
                 <li class="link-login">My Account
@@ -81,7 +81,6 @@
             </div>
         </div>
     </header>
-
     <main class="pancakes-personalized">
         <h2>Get yourself a personalized pancake by a click</h2>
 
@@ -112,43 +111,43 @@
                    <!-- <input type="submit" value="submit">-->
                 </form>
             </div>
-
         </article>
 
         <article class="pancake-toppings">
-            <h3>TOPPINGS</h3>
-            <div>
+            <div class="toppings-head">
+                <h3>TOPPINGS</h3>
                 <div id="toppings-button">
-                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
                     <button class="btn" onclick="filterSelection('Candies')"> Candies</button>
                     <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
                     <button class="btn" onclick="filterSelection('syrups')"> Syrups</button>
-                  </div>
-                  
-                  <div class="topping-variants">
-                    <div class="filterDiv syrups">Maple</div>
-                    <div class="filterDiv syrups fruits">Orange</div>
-                    <div class="filterDiv syrups">Honey</div>
-                    <div class="filterDiv syrups">Strawberry</div>
-                    <div class="filterDiv syrups candies">Chantilly</div>
-                    <div class="filterDiv syrups">Vanilla</div>
-                    <div class="filterDiv candies">M&M's</div>
-                    <div class="filterDiv candies">Oreo</div>
-                    <div class="filterDiv fruits">Melon</div>
-                    <div class="filterDiv fruits candies">MilkyWay</div>
-                    <div class="filterDiv fruits">Banana</div>
-                    <div class="filterDiv fruits">Cornichon</div>
-                  </div>
+                    <button class="btn active" onclick="filterSelection('all')"> All</button>
+                </div>
+            </div>
+            <div class="topping-variants">
+                <div class="filterDiv syrups">Maple</div>
+                <div class="filterDiv syrups fruits">Orange</div>
+                <div class="filterDiv syrups">Honey</div>
+                <div class="filterDiv syrups">Strawberry</div>
+                <div class="filterDiv syrups candies">Chantilly</div>
+                <div class="filterDiv syrups">Vanilla</div>
+                <div class="filterDiv candies">M&M's</div>
+                <div class="filterDiv candies">Oreo</div>
+                <div class="filterDiv fruits">Melon</div>
+                <div class="filterDiv fruits candies">MilkyWay</div>
+                <div class="filterDiv fruits">Banana</div>
+                <div class="filterDiv fruits">Cornichon</div>
             </div>
         </article>
     </main>
-
     <div class="personalized-result">
-
+        <button>Add to my Basket</button>
+        <p>craving like more ?</p>
+        <select>Add quantity : </select>
     </div>
     <div class="clients-testimony">
 
     </div>
+</body>
 </body>
 <!--Temporary Footer, credit : https://codepen.io/slstudios/pen/XbzQVK-->
 <footer class="footer-distributed">
@@ -171,7 +170,7 @@
 					<a href="#">Contact</a>
 				</p>
 
-				<p class="footer-company-name">Company Name © 2021</p>
+				<p class="footer-company-name">Pancake Palace © 2021</p>
 			</div>
 
 			<div class="footer-center">
