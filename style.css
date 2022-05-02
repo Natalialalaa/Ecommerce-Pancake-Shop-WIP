@@ -436,7 +436,9 @@ input[type=radio] + label{
     
 }
 @media (max-width: 900px) {
-    .toppings-head {
+    .toppings-filter {
+        margin-left: 20%;
+        /*border: #412700 solid 5px;*/
         transform: rotate(0deg);
     }
     .pancake-toppings {
