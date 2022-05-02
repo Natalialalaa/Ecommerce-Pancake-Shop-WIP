@@ -114,28 +114,28 @@
         </article>
 
         <article class="pancake-toppings">
-            <div class="toppings-head">
+            <div class="toppings-filter">
                 <h3>TOPPINGS</h3>
-                <div id="toppings-button">
-                    <button class="btn" onclick="filterSelection('Candies')"> Candies</button>
-                    <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
-                    <button class="btn" onclick="filterSelection('syrups')"> Syrups</button>
-                    <button class="btn active" onclick="filterSelection('all')"> All</button>
+                <div id="toppings-head">
+                    <button class="btn" onclick="filterSelection(event)" data-filter="candies"> Candies</button>
+                    <button class="btn" onclick="filterSelection(event)" data-filter="fruits"> Fruits</button>
+                    <button class="btn" onclick="filterSelection(event)" data-filter="syrups"> Syrups</button>
+                    <button class="btn active" onclick="filterSelection(event)" data-filter="all"> All</button>
                 </div>
             </div>
             <div class="topping-variants">
-                <div class="filterDiv syrups">Maple</div>
-                <div class="filterDiv syrups fruits">Orange</div>
-                <div class="filterDiv syrups">Honey</div>
-                <div class="filterDiv syrups">Strawberry</div>
-                <div class="filterDiv syrups candies">Chantilly</div>
-                <div class="filterDiv syrups">Vanilla</div>
-                <div class="filterDiv candies">M&M's</div>
-                <div class="filterDiv candies">Oreo</div>
-                <div class="filterDiv fruits">Melon</div>
-                <div class="filterDiv fruits candies">MilkyWay</div>
-                <div class="filterDiv fruits">Banana</div>
-                <div class="filterDiv fruits">Cornichon</div>
+                <div class=" all syrups hidden">Maple</div>
+                <div class=" all syrups fruits">Marmalade</div>
+                <div class=" all syrups">Honey</div>
+                <div class=" all syrups">Strawberry</div>
+                <div class=" all syrups candies">Chantilly</div>
+                <div class=" all syrups">Vanilla</div>
+                <div class=" all candies">M&M's</div>
+                <div class=" all candies">Oreo</div>
+                <div class=" all fruits">Melon</div>
+                <div class=" all fruits candies">MilkyWay</div>
+                <div class=" all fruits">Banana</div>
+                <div class=" all fruits">Cornichon</div>
             </div>
         </article>
     </main>

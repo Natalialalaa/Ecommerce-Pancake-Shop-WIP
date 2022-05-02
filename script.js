@@ -10,7 +10,7 @@ login.addEventListener("mouseover", function() {
 });
 
 window.addEventListener("click", function(e) {
-  console.log(e);
+  /*console.log(e);*/
   if (!loginpop.contains(e.target)) {
     loginpop.style.display = 'none';
   }
@@ -59,6 +59,22 @@ const changingToppings = () => {
   and remove the "show" class from the elements that are not selected */
 
 // Show filtered elements
-// Hide elements that are not selected
+function filterSelection(e) {
+  const flavors = document.querySelectorAll(".topping-variants div"); // select all tooping variants divs
+  let filter = e.target.dataset.filter;
+
+  console.log(filter); // grab the value in the event target's data-filter attribute
+  console.log(flavors);
+
+  flavors.forEach(flavors => {
+
+    flavors.classList.contains(filter) // does the flavors have the filter in its class list? Hide elements that are not selected
+    
+    ? flavors.classList.remove('hidden') // if yes, make sure .hidden is not applied
+    : flavors.classList.add('hidden'); // if no, apply .hidden
+  });
+}
+
 // Add active class to the current control button (highlight it)
+
 

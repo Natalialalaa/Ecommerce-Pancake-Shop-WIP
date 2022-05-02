@@ -364,18 +364,6 @@ input[type=radio] + label{
 
 
 /*personalized 3*/
-.filterDiv {
-background-color: #b43300;
-color: #ffffff;
-width: 100px;
-line-height: 100px;
-text-align: center;
-margin: 2px;
-}
-
-.show {
-display: block;
-}
 
 .topping-variants {
     background-color: rgba(255, 209, 139, 0.493);
@@ -385,12 +373,28 @@ display: block;
     overflow-y: auto;
     text-align: center;
 }
-
-.topping-variants .filterDiv{
-    border: 3px outset rgb(133, 112, 93);
+/******filter*******/
+/*.all {
     display: inline-block;
+}*/
+
+.topping-variants div{
+    /*display: inline-block;*/
+    border: 3px outset rgb(133, 112, 93);
     margin: 5px;
+    background-color: #b43300;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100px;
+    margin: 2px;
+
 }
+
+.hidden {
+    display: none;
+}
+
+/****************/
 
 .pancake-toppings {
     border: 10px outset rgb(133, 112, 93);
@@ -415,7 +419,7 @@ display: block;
  
 }
 
-.toppings-head {
+.toppings-filter {
     margin-left: 20%;
     /*border: #412700 solid 5px;*/
     transform: rotate(270deg);
