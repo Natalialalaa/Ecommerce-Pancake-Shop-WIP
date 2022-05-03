@@ -82,17 +82,18 @@
         </div>
     </header>
     <main class="pancakes-personalized">
-        <h2>Get yourself a personalized pancake by a click</h2>
-
+        <h2>Get your personalized pancake by a click <i><img src="Visuals/icon-hand.png"></i></h2>
         <article class="pancake-sizes">
-                <div class="sizes-sub-1 personalized-style-set">
-                    <div class="slidecontainer">
-                        <p><span id="slide-value">Normal</span></p>
-                        <input type="range" value="2" step ="1" min="1" max="3" onchange="sizingPancake()" class="slider" id="myRange">
-                        <h3>SIZES</h3>
-                    </div>
-                        <img src="Visuals/pancake-size.png" class="sizes-sub-2" id="sizes-img">
+            <div>
+                <img src="Visuals/pancake-size.png" class="sizes-sub-2" id="sizes-img">
+            </div>
+            <div class="sizes-sub-1 personalized-style-set">
+                <div class="slidecontainer">
+                    <h3>SIZES</h3>
+                    <p><span id="slide-value">Normal</p>
+                    <input type="range" value="2" step ="1" min="1" max="3" onchange="sizingPancake()" class="slider" id="myRange">
                 </div>
+            </div>
         </article>
 
         <article class="pancake-flavours">
@@ -117,35 +118,35 @@
             <div class="toppings-filter">
                 <h3>TOPPINGS</h3>
                 <div id="toppings-head">
-                    <button class="btn" onclick="filterSelection(event)" data-filter="candies"> Candies</button>
-                    <button class="btn" onclick="filterSelection(event)" data-filter="fruits"> Fruits</button>
-                    <button class="btn" onclick="filterSelection(event)" data-filter="syrups"> Syrups</button>
-                    <button class="btn active" onclick="filterSelection(event)" data-filter="all"> All</button>
+                    <button class="btn" onclick="filterSelection(event)" data-filter="candies">Candies</button>
+                    <button class="btn" onclick="filterSelection(event)" data-filter="fruits">Fruits</button>
+                    <button class="btn" onclick="filterSelection(event)" data-filter="syrups">Syrups</button>
+                    <button class="btn active" onclick="filterSelection(event)" data-filter="all">All</button>
                 </div>
             </div>
             <div class="topping-variants">
-                <div class=" all syrups hidden">Maple</div>
-                <div class=" all syrups fruits">Marmalade</div>
-                <div class=" all syrups">Honey</div>
-                <div class=" all syrups">Strawberry</div>
-                <div class=" all syrups candies">Chantilly</div>
-                <div class=" all syrups">Vanilla</div>
-                <div class=" all candies">M&M's</div>
-                <div class=" all candies">Oreo</div>
-                <div class=" all fruits">Melon</div>
-                <div class=" all fruits candies">MilkyWay</div>
-                <div class=" all fruits">Banana</div>
-                <div class=" all fruits">Cornichon</div>
+                <div class="all syrups hidden">Maple</div>
+                <div class="all syrups fruits">Marmalade</div>
+                <div class="all syrups">Honey</div>
+                <div class="all syrups">Strawberry</div>
+                <div class="all syrups candies">Chantilly</div>
+                <div class="all syrups">Vanilla</div>
+                <div class="all candies">M&M's</div>
+                <div class="all candies">Oreo</div>
+                <div class="all fruits">Melon</div>
+                <div class="all fruits candies">MilkyWay</div>
+                <div class="all fruits">Banana</div>
+                <div class="all fruits">Cornichon</div>
             </div>
         </article>
     </main>
     <div class="personalized-result">
         <button>Add to my Basket</button>
-        <p>craving like more ?</p>
+        <h3>craving like more ?</h3>
         <select>Add quantity : </select>
     </div>
-    <div class="clients-testimony">
-
+    <div class="our-partners">
+        <h3>Become our partners</h3>
     </div>
 </body>
 </body>
@@ -176,17 +177,17 @@
 			<div class="footer-center">
 
 				<div>
-					<i class="fa fa-map-marker"></i>
+					<i><img src="Visuals/icon-location.png" class="footer-icon"></i>
 					<p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
 				</div>
 
 				<div>
-					<i class="fa fa-phone"></i>
+					<i><img src="Visuals/icon-phone.png" class="footer-icon"></i>
 					<p>+1.555.555.5555</p>
 				</div>
 
 				<div>
-					<i class="fa fa-envelope"></i>
+					<i><img src="Visuals/icon-mail.png" class="footer-icon"></i>
 					<p><a href="mailto:support@company.com">support@company.com</a></p>
 				</div>
 
@@ -201,10 +202,9 @@
 
 				<div class="footer-icons">
 
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
+					<i><a href="#"><img src="Visuals/icon-facebook.png" href="#"></a></i>
+					<i><a href="#"><img src="Visuals/icon-instagram.png"></a></i>
+					<i><a href="#"><img src="Visuals/icon-twitter.png"></a></i>
 
 				</div>
 
