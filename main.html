@@ -7,38 +7,42 @@
     <title>Pancake Palace</title>
     <link rel="icon" type="image/png" href="visuals/icon-pancake.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 
-<!--semantic structure wireframe-->
 <body>
     <header>
         <nav class="top-nav">
             <h3>Pancake Palace</h3>
             <a href="main.html"><img src="visuals/icon-pancake.png" alt="company-logo" height="50" width="50"></a>
-            <ul class="top-nav-links">
-                <li class="link-history"><a href="#">Our History</a></li>
-                <li class="link-login">My Account
-                    <div class="dropdown-content">
-                        <!--login form-->
-                        <form class="content-form">
-                            <h3 class="form-welcome">Hello, welcome back.</h3>
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="agent-smith@mail.com" maxlength="30" required>
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" placeholder="6-12 characters" minlength="6" maxlength="12" required>
-                            <div class="user-input">
-                                <button type="submit" class="form-button">Login</button>
-                                <label>
-                                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                                </label>
-                            </div>
-                            <span class="create-member">New client? <a href="#">Create membership</a></span>
-                        </form>
-                    </div>
-                </li>
-                <li class="languages-option"><a href="#"><img src="Visuals/EN-flag.png"></a></li>
-                <li class="languages-option"><a href="#"><img src="Visuals/FR-flag.png"></a></li>
-            </ul>
+            <div class="hamburger-icon" id="sidebar-icon">
+                <div></div>
+            </div>
+            <div class="top-nav-links">
+                <ul class="nav-right" >
+                    <li class="link-history">Our History</li>
+                    <li class="link-login">My Account</li>
+                        <div class="dropdown-content">
+                            <!--login form-->
+                            <form class="content-form">
+                                <h3 class="form-welcome">Hello, welcome back.</h3>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="agent-smith@mail.com" maxlength="30" required>
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" placeholder="6-12 characters" minlength="6" maxlength="12" required>
+                                <div class="user-input">
+                                    <button type="submit" class="form-button">Login</button>
+                                    <label>
+                                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                </div>
+                                <span class="create-member">New client? <a href="#">Create membership</a></span>
+                            </form>
+                        </div>
+                    <li class="languages-option"><a href="#"><img src="Visuals/EN-flag.png"></a></li>
+                    <li class="languages-option"><a href="#"><img src="Visuals/FR-flag.png"></a></li>
+                </ul>
+            </div>
         </nav>
         
         <div class="welcome-header">
@@ -54,7 +58,7 @@
                     Reprehenderit, quia. Quo neque error repudiandae fuga, ipsa laudantium molestias eos 
                     sapiente officiis modi.
                 </h4>
-                <button>Create my pancakes</button>
+                <button class="create-pancakes">Create my pancakes</button>
             </div>
         </div>
         <div class="header-qualities">
@@ -82,7 +86,9 @@
         </div>
     </header>
     <main class="pancakes-personalized">
-        <h2>Get your personalized pancake by a click <i><img src="Visuals/icon-hand.png"></i></h2>
+        <h2>Get your personalized pancake by a click  
+            <i><img src="Visuals/icon-hand.png"></i>
+        </h2>
         <article class="pancake-sizes">
             <div>
                 <img src="Visuals/pancake-size.png" class="sizes-sub-2" id="sizes-img">
@@ -145,8 +151,37 @@
         <h3>craving like more ?</h3>
         <select>Add quantity : </select>
     </div>
+
     <div class="our-partners">
-        <h3>Become our partners</h3>
+        <div class="testimonyIntro">    
+            <h3>Become our partners</h3>
+            <p>Our team created best opportunities for your business.</p>
+        </div>
+
+        <div class="testimonyClients">  
+            <div class="profileBox">
+                <img class="profileThumb" src="Visuals/profil1.jpg">
+                <p class="profileMsg"><b>John Doe - <span>Data Architect</span></b><br>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo 
+                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                </p>
+            </div>
+
+            <div class="profileBox">  
+                <img class="profileThumb" src="Visuals/profil2.jpg">
+                <p class="profileMsg"><b>Helena Doe - <span>.this CEO</span></b><br>
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit 
+                    aut fugit, sed quia consequuntur magni dolores eos qui ratione nesciunt.
+                    Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+                </p>
+            </div>
+        </div>
+
+        <div class="profileButtons">
+            <a href="#"><i class="fas fa-arrow-alt-circle-left"></i></a>
+            <a href="#"><i class="fas fa-arrow-alt-circle-right"></i></a>
+        </div>
     </div>
 </body>
 </body>

@@ -6,6 +6,10 @@
 
 /*navbar*/
 .top-nav{
+    /*position: sticky;*/
+    width: 100%;
+    height: 80px;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -13,8 +17,7 @@
     color: antiquewhite;
     padding: 1rem 1rem;
 }
-
-.top-nav-links{
+.nav-right{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,26 +37,19 @@ ul li a{
 
 
 /*Login dropdown*/
-
 .dropdown-content{
-    position: absolute;
+    position: fixed;
+    z-index: 2;
     display: none;
     top: 90px;
-    z-index: 1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 5px;
     padding: 20px 30px;
     background-color: #f5f5fa;
     color: #583b05;
-    border: 8px outset rgb(133, 112, 93);
+    border: 5px outset rgb(133, 112, 93);
 }
-
-/* .link-login:hover .dropdown-content{
-    display: block;
-    transition-delay: 0s;
-} */
-
 
 input[type=email] {
     width: 100%;
@@ -79,7 +75,6 @@ input[type=password] {
 }
 
 .form-welcome {
-    /*border: 5px solid red;*/
     font-size: 30px;
     margin-bottom: 15px;
 }
@@ -95,14 +90,86 @@ input[type=password] {
     font-size: small;
     text-align: center;
 }
+
+.create-member a{
+    color: blue;
+}
+
+/*Navbar icon*/
+.hamburger-icon {
+    width: 30px;
+    display: none;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after,
+.hamburger-icon div {
+    background: #fff;
+    content: "";
+    display: none;
+    height: 6px;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s;
+}
+.hamburger-icon:hover:before {
+transform: translateY(12px) rotate(135deg);
+}
+.hamburger-icon:hover:after {
+transform: translateY(-12px) rotate(-135deg);
+}
+.hamburger-icon:hover div {
+transform: scale(0);
+}
+
+/*navbar responsive*/
 @media only screen and (max-width: 600px) {
+    /*before burger click*/
+    .top-nav-links{
+        display: none;
+    }
+
+    /*after burger click*/
+    .top-nav-links > *{
+        margin-top: 50px;
+        padding: 50px;
+        position: absolute;
+        display: block;
+        background-color: #33383b;
+        color: #666;
+    }
+
+    .nav-right-test{
+        display: block;
+        position: absolute;
+    }
+    .nav-right{
+        padding-right: 10px;
+    }
+    /*  display: flex;
+        margin-top: 150px;
+        position:sticky;
+        justify-content: space-between;
+        background-color: rgb(221, 90, 50);
+        margin: 0;
+        padding: 20px;
+    }*/
+
     .user-input{
         display: block;
         width: max-content;
     }
-}
-.create-member a{
-    color: blue;
+
+    /*hamburger icon*/
+    .hamburger-icon:before,
+    .hamburger-icon:after,
+    .hamburger-icon div {
+        display: block;
+    }
+    .hamburger-icon {
+        display: block;
+    }
+
 }
 
 
@@ -115,6 +182,7 @@ input[type=password] {
       rgba(255, 255, 255, 0.486)
       ),
       url("visuals/pancake-banner.jpg");
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -251,28 +319,33 @@ div .txt{
 
 main {
     background-color: #e5e5f7;
-    opacity: 0.8;
-    background-image: radial-gradient(#a9a9a9 1.05px, #e5e5f7 1.05px);
-    background-size: 21px 21px;
-    padding: 0 5vw;
+    opacity: 1;
+    background-size: 26px 26px;
+    background-image: repeating-linear-gradient(45deg, #b6b9ff 0, #b6b9ff 2.6px, #e5e5f7 0, #e5e5f7 50%);
 }
 
-.personalized-result {
-    padding: 80px;
-    background-color: #e5e5f7;
-    opacity: 0.8;
-    background-image: radial-gradient(#a9a9a9 1.05px, #e5e5f7 1.05px);
-    background-size: 21px 21px;
+/*magic pattern source: https://www.magicpattern.design/tools/css-backgrounds*/
+.pancakes-personalized{
+    padding: 0 10vw 10vw;
 }
 
 .pancakes-personalized h2 {
     text-align: center;
-    font-size: 40px;
+    font-size: 3vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #412700;
     padding: 50px;
 }
 
+@media only screen and (max-width: 800px) {
+    .pancakes-personalized h2 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 6vw;
+        padding: 50px;
+    }
+}
 
 
 /*personalized 1*/
@@ -288,7 +361,7 @@ main {
 .pancake-sizes {
     border: 10px outset rgb(133, 112, 93);
     background-color: rgba(217, 193, 170, 0.682);
-    padding: 10px 50px 150px;
+    padding: 2vw 10vw 5vw;
     margin-bottom: 5vh;
     display: flex;
     flex-direction: row;
@@ -322,11 +395,12 @@ input[type=range] {
     padding: 5px;
 }
 
+
 /*personalized 2*/
 .pancake-flavours{
     border: 10px outset rgb(133, 112, 93);
     background-color: rgba(217, 193, 170, 0.682);
-    padding: 86px 80px 85px;
+    padding: 5vw 10vw 5vw;
     margin-bottom: 5vh;
     display: flex;
     flex-direction: row;
@@ -348,7 +422,7 @@ input[type=range] {
 }
 
 .flavours-sub-2 img{
-    width: 300px;
+    width: 250px;
     height: 200px;
 }
 
@@ -358,15 +432,16 @@ input[type=range] {
 }
 
 input[type=radio] + label{
-    padding: 5px;
+    padding: 10px;
 }
 
-/* issues fix
-.slidecontainer{
-    border: #771a1a solid 3px;
+@media only screen and (max-width: 1100px) {
+    .flavoursButtons{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 }
-*/
-
 
 /*personalized 3*/
 
@@ -382,7 +457,6 @@ input[type=radio] + label{
     width: 500px;
     min-height: 200px;
     overflow-y: auto;
-
 }
 
 .topping-variants div{
@@ -398,6 +472,22 @@ input[type=radio] + label{
     text-align: center;
 }
 
+@media only screen and (max-width: 400px) {
+    .topping-variants div{
+        font-size: xx-small;
+        line-height: 60px;
+        width: 60px;
+        height: 60px;
+    }
+    div.topping-variants{
+        width: 200px;
+    }
+}
+@media only screen and (max-width: 280px) {
+    div.topping-variants{
+        width: 150px;
+    }
+}
 /******filter*******/
 .hidden {
     display: none;
@@ -407,7 +497,7 @@ input[type=radio] + label{
 .pancake-toppings {
     border: 10px outset rgb(133, 112, 93);
     background-color: rgba(217, 193, 170, 0.682);
-    padding: 100px;
+    padding: 5vw 10vw 5vw;
     /*margin-bottom: 5vh;*/
     display: flex;
     flex-direction: row;
@@ -430,6 +520,26 @@ input[type=radio] + label{
     transform: rotate(270deg);
     margin-left: 10vw;
 }
+
+/* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    }
+    
+    .btn:hover {
+    background-color: #ddd;
+    }
+    
+    .btn:active {
+    background-color: #666;
+    color: white;
+    }
+
+    
 
 
 @media only screen and (max-width: 800px) {
@@ -494,46 +604,96 @@ input[type=radio] + label{
     }
 }
 
-
-/* Style the buttons */
-.btn {
-border: none;
-outline: none;
-padding: 12px 16px;
-background-color: #f1f1f1;
-cursor: pointer;
-}
-
-.btn:hover {
-background-color: #ddd;
-}
-
-.btn:active {
-background-color: #666;
-color: white;
+/*place order*/
+.personalized-result{
+    background-color: #b6b9ff;
+    padding: 50px;
+    display: grid;
+    place-items: center;
 }
 
 
+/*testimony footer*/
+
+.our-partners {
+    justify-content: center;
+    color: whitesmoke;
+    margin: 2.5rem;
+}
+
+.testimonyIntro {
+    margin: 10px;
+    display: block;
+    color: rgb(56, 5, 5);
+    text-align: center;
+}
+
+.testimonyClients {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.testimonyClients span {
+    color: lightsalmon;
+}
+
+.profileBox {
+    display: flex;
+    max-width: 400px;
+    background-color: rgb(5, 26, 53);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 2.5rem;
+
+}
+
+.profileThumb {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin: 15px;
+}
+p.profileMsg{
+    font-size: 10px;
+    text-align: justify;
+    margin: 15px;
+}
+.profileMsg b{
+    font-size: 13px;
+}
+
+.profileButtons{
+    display: flex;
+    justify-content: center;
+}
+
+.profileButtons i {
+    font-size: 30px;
+    margin: 10px;
+    color: tomato;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media only screen and (max-width: 500px){
+    .testimonyClients {
+        display: block;
+    }
+    /*!remove margins left*/
+    .profileBox{
+        min-width: 200px;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .profileBox {
+        padding: 10px;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 
 
