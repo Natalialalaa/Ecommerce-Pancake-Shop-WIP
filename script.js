@@ -24,6 +24,7 @@ const output = document.getElementById("slide-value");
 const pancakeSize = document.getElementById("sizes-img");
 
 slider.oninput = sizingPancake = () => {
+  //let responsivePancake = pancakeSize.offsetWidth;
   let sliderValue = slider.value;
 
   pancakeSize.style.width = (125 * sliderValue) + 'px';

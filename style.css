@@ -230,7 +230,7 @@ transform: scale(0);
     }
 }
 /*banner button style*/
-.header-content button{
+.create-button{
     margin: 0.5rem 2rem 2rem 5rem;
     display: inline-block;
     text-transform: uppercase;
@@ -240,16 +240,20 @@ transform: scale(0);
     font-weight: 600;
     color: rgb(230, 100, 80);
     font-size: 15px;
-    height: 38px;
+    height: fit-content;
     padding: 8px 24px;
     border-radius: 50px;
-    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    background-color: linear-gradient(180deg,#fff,#f5f5fa);
     box-shadow: 0 4px 11px 0 rgba(177, 11, 11, 0.15), 0 1px 3px 0 rgb(93 100 148 / 20%);
     transition: all .2s ease-out;
 }
 
-.header-content button:hover{
+.create-button:hover{
    box-shadow: inset 0px 0px 5px #979393;
+}
+
+.create-button:active{
+    background-color: #ff9e77;
 }
     
 /*Media Query for : banner title, content and button*/
@@ -383,8 +387,7 @@ main {
 }
 .sizes-sub-2{
     position: absolute;
-    margin-left: 200px;
-
+    left: 50%;
 }
 .sizes-sub-1{
     margin-top: 100px;
@@ -497,12 +500,12 @@ input[type=radio] + label{
 .pancake-toppings {
     border: 10px outset rgb(133, 112, 93);
     background-color: rgba(217, 193, 170, 0.682);
-    padding: 5vw 10vw 5vw;
-    /*margin-bottom: 5vh;*/
+    padding: 5vw 10vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
 }
+
 
 
 .pancake-toppings h3{
@@ -518,14 +521,21 @@ input[type=radio] + label{
 
 .toppings-filter {
     transform: rotate(270deg);
-    margin-left: 10vw;
 }
+#toppings-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 
 /* Style the buttons */
 .btn {
     border: none;
     outline: none;
     padding: 12px 16px;
+    margin: 5px;
     background-color: #f1f1f1;
     cursor: pointer;
     }
@@ -570,15 +580,17 @@ input[type=radio] + label{
 
     /*1*/
     .pancake-sizes {
-        display: block;
         padding: 5vw;
     }
     .personalized-style-set h3{
         font-size: 20px;
     }
     .sizes-sub-2{
+        position: absolute;
         margin: 0 auto;
-        margin-top: 10vh;
+        margin-top: 80px;
+        left: 0;
+        right: 0;
     }
     .sizes-sub-1{
         margin: 0 auto;
@@ -586,8 +598,11 @@ input[type=radio] + label{
     }
 
     /*2*/
-    .pancake-flavours{
-        display: block;
+    .pancake-flavours {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
         padding: 5vw;
     }
     .flavours-sub-1 h3{
@@ -596,7 +611,11 @@ input[type=radio] + label{
 
     /*3*/
     .pancake-toppings {
-        display: block;
+        display: flex;
+        justify-content: center;
+        flex-direction: column; /* NEW */
+        align-items: center;
+        flex-wrap: wrap;
         padding: 5vw;
     }
     .toppings-filter h3 {
@@ -607,13 +626,39 @@ input[type=radio] + label{
 /*place order*/
 .personalized-result{
     background-color: #b6b9ff;
-    padding: 50px;
     display: grid;
     place-items: center;
+    color: rgb(0, 21, 80);
+    padding: 5vh;
+}
+.personalized-result>*{
+    margin: 10px;
 }
 
+.result-button {
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(230, 100, 80);
+    font-size: 20px;
+    height: fit-content;
+    padding: 8px 24px;
+    border-radius: 50px;
+    background-color: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: 0 4px 11px 0 rgba(177, 11, 11, 0.15), 0 1px 3px 0 rgb(93 100 148 / 20%);
+}
 
-/*testimony footer*/
+.result-button:hover{
+    box-shadow: inset 0px 0px 5px #979393;
+}
+
+.result-button:active{
+    background-color: #d8c3ff;
+}
+
+/*testimony / partner footer*/
 
 .our-partners {
     justify-content: center;
@@ -679,15 +724,11 @@ p.profileMsg{
     .testimonyClients {
         display: block;
     }
-    /*!remove margins left*/
-    .profileBox{
-        min-width: 200px;
-    }
 }
 @media only screen and (max-width: 950px) {
     .profileBox {
         padding: 10px;
-        margin: 5px;
+        margin: 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
