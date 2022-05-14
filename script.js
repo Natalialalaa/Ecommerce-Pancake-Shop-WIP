@@ -1,7 +1,6 @@
 /*display login pop up when client hover to "My Account",
   then hide login pop up when client click anywhere outside the pop up
 */
-
 const login = document.querySelector(".link-login");
 const loginpop = document.querySelector(".dropdown-content");
 
@@ -16,73 +15,138 @@ window.addEventListener("click", function(e) {
   }
 });
 
-
+let userSize;
 /*main article 1: pancake image -> 3 steps sizing, SLIDER value -> tiny, normal, XxL */
-
-const slider = document.getElementById("myRange");
-const output = document.getElementById("slide-value");
-const pancakeSize = document.getElementById("sizes-img");
-
-slider.oninput = sizingPancake = () => {
+let sizingPancake = () => {
+  const slider = document.getElementById("myRange");
+  const output = document.getElementById("slide-value");
+  const pancakeSize = document.getElementById("sizes-img");
   //let responsivePancake = pancakeSize.offsetWidth;
   let sliderValue = slider.value;
-
   pancakeSize.style.width = (125 * sliderValue) + 'px';
-  output.innerHTML = sliderValue < 2 ? 'petit' : sliderValue > 2 ?'XXL' : 'medium' ;
+
+  output.textContent = sliderValue < 2 ? 'petit' : sliderValue > 2 ? 'XXL' : 'medium' ;
+   userSize = output.textContent;
+
+  return userSize;
 }
 
 
 /*main article 2: flavors image -> 3 images changing -> Radio button value / checked */
-
-const changingToppings = () => {
+let userTopping = "";
+let changingFlavour = () => {
   const flavorsPic = document.getElementById("flavours-pic");
 
   if (document.getElementById("matcha").checked) {
-  flavorsPic.src = "Visuals/flavour-matcha.png";
+    flavorsPic.src = "Visuals/flavour-matcha.png";
+    userTopping = "matcha";
   } else if (document.getElementById("chocolate").checked) { 
-  flavorsPic.src = "Visuals/flavour-chocolate.png";
-  }  else if (document.getElementById("strawberry").checked) { 
-  flavorsPic.src = "Visuals/flavour-strawberry.png";
+    flavorsPic.src = "Visuals/flavour-chocolate.png";
+    userTopping = "chocolate";
+  } else if (document.getElementById("strawberry").checked) { 
+    flavorsPic.src = "Visuals/flavour-strawberry.png";
+    userTopping = "strawberry";
   }
+
+  return userTopping;
 }
 
 
-/*main article 3: toppings category -> filter */
-  /* Add the "show" class (display:block) to the filtered elements,
-  and remove the "show" class from the elements that are not selected */
+/*main article 3: toppings category -> filter Add the "show" class (display:block) to the filtered elements,
+and remove the "show" class from the elements that are not selected */
+const toppings = document.querySelectorAll(".topping-variants div");
 
-// Show filtered elements
-function filterSelection(e) {
-  const flavors = document.querySelectorAll(".topping-variants div"); // select all tooping variants divs
+let filterTopping = (e) => {
+  // grab the value in the event target's data-filter attribute
   let filter = e.target.dataset.filter;
 
-  //console.log(filter); // grab the value in the event target's data-filter attribute
-  //console.log(flavors);
-
-  flavors.forEach(flavors => {
-
-    flavors.classList.contains(filter) // does the flavors have the filter in its class list? Hide elements that are not selected
-    
-    ? flavors.classList.remove('hidden') // if yes, make sure .hidden is not applied
-    : flavors.classList.add('hidden'); // if no, apply .hidden
+  toppings.forEach(topping => {
+    topping.classList.contains(filter) // does the topping have the filter in its class list? Hide elements that are not selected
+    ? topping.classList.remove('hidden') // if yes, make sure .hidden is not applied
+    : topping.classList.add('hidden'); // if no, apply .hidden
   });
+
 }
 
-// Add active class to the current control button (highlight it)
+const selectedToppings = document.querySelectorAll(".topping");
+
+selectedToppings.forEach(selectedTopping => {
+  selectedTopping.addEventListener('click', changeColor = (e) => {
+    e.target.classList.toggle("toppingClicked");
+  })
+});
+
+/*add and remove topping selection dynamically*/
+let toppingList = [];
+let listText = document.getElementsByClassName('list-text')[0];
+
+selectedToppings.forEach(selectedTopping => {
+  selectedTopping.addEventListener('click', getToppingName = (e) => {
+    let myToppings = e.target.textContent; 
+    if(!toppingList.includes(myToppings)){          //checking weather toppingList array contain clicked value
+      toppingList.push(myToppings);               //adding to array if value doesnt exists yet    
+      //get the last item from ToppingList array
+      const selectedToppingList = toppingList[toppingList.length - 1];
+      //then create element with last array value
+      const el = document.createElement('p');
+      el.innerHTML = selectedToppingList;
+      el.className = 'selected-topping';
+      listText.appendChild(el);
+    
+    }else{
+      let removedToppingList = toppingList.splice(toppingList.indexOf(myToppings), 1);  //deleting
+      let selectedToppings = document.querySelectorAll('.selected-topping');
+
+      
+      //iterate all selectedToppings elements, 
+      //remove an element that has an innerText equal to e.target.innerText
+      //or removedToppingList.toString();
+    }
+  })
+});
+
 
 /* !! Work still in progress !!*/
 /*responsive navbar : when user click hamburger icon,
   show side navbar from the left to the right (dropdown login included on lower part)
-  then blur all background elements, focusing on sidebar */
+  then blur all background elements, focusing on sidebar 
+*/
 
 const burgerIcon = document.querySelector("#sidebar-icon");
-const sidebar = document.querySelector(".top-nav-links");
 
-burgerIcon.addEventListener("click", showSidebar = (e) => {
-  console.log(e)
-  console.log(sidebar);
-
+burgerIcon.addEventListener("click", showSidebar = () => {
   //sidebar.style.display = "block";
-  sidebar.classList.toggle("nav-right-test");
-  //sidebar.classList.toggle("nav-right-test");
+  const sidebar = document.querySelector(".top-nav-links");
+  sidebar.classList.toggle("top-nav-links-mobile");
 });
+
+
+/* get 3 pancakes-personalized articles value result:
+sizes -> userSize -> petit/ medium/ XXL
+flavours -> userFlavour -> Matcha/ Chocolate/ Strawberry
+topping-variants div inner html -> userTopping 12 variations
+
+/* prototype 1 
+let userCommand = (userSize, userFlavour, userTopping) => { 
+}
+*/
+
+let userCommand = () => {
+  let size = sizingPancake();
+  let flavour = changingFlavour();
+
+  let finalCommand = document.querySelector(".result-name");
+
+  //change result-name inner html
+  finalCommand.textContent = "your command is " + size + " " + flavour + " pancake!";
+  console.log("your command is " + size + flavour + " pancake");
+
+  //load immediately after each main value interaction/changes
+}
+
+
+/*add to my basket => increase .cart-value*/
+
+/*create my pancakes button auto scroll to personalized pancake section*/
+
+/*become our partner left right button = review carousel*/

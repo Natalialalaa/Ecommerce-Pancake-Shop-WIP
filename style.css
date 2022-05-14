@@ -39,7 +39,6 @@ ul li a{
 /*Login dropdown*/
 .dropdown-content{
     position: fixed;
-    z-index: 2;
     display: none;
     top: 90px;
     min-width: 160px;
@@ -128,37 +127,28 @@ transform: scale(0);
     .top-nav-links{
         display: none;
     }
-
     /*after burger click*/
-    .top-nav-links > *{
-        margin-top: 50px;
-        padding: 50px;
-        position: absolute;
+    .top-nav-links-mobile{
         display: block;
+        position: absolute;
+        top: 80px;
+        width: 100vw;
+        padding: 50px 0px;
         background-color: #33383b;
         color: #666;
     }
-
-    .nav-right-test{
-        display: block;
-        position: absolute;
+    .languages-option{
+        padding: 0px;
     }
-    .nav-right{
-        padding-right: 10px;
+    .nav-right {
+        display: flex;
+        flex-direction: column;
     }
-    /*  display: flex;
-        margin-top: 150px;
-        position:sticky;
-        justify-content: space-between;
-        background-color: rgb(221, 90, 50);
-        margin: 0;
-        padding: 20px;
-    }*/
-
-    .user-input{
-        display: block;
-        width: max-content;
-    }
+        /*wip*/
+        .dropdown-content{
+            position: sticky;
+            top: 300px;
+        }
 
     /*hamburger icon*/
     .hamburger-icon:before,
@@ -394,6 +384,7 @@ main {
     margin-right: 200px;
 }
 
+
 input[type=range] {
     padding: 5px;
 }
@@ -408,15 +399,6 @@ input[type=range] {
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-.pancake-flavours h3{
-    font-size: 40px;
-    font-family: sans-serif;
-    font-weight: bold;
-    letter-spacing: 7px;
-    padding: 1rem;
-    color: #ff702d;
 }
 
 .flavours-sub-1{
@@ -447,7 +429,6 @@ input[type=radio] + label{
 }
 
 /*personalized 3*/
-
 .topping-variants {
     background-color: rgba(255, 209, 139, 0.493);
     border: 4px inset rgb(133, 112, 93);
@@ -457,26 +438,38 @@ input[type=radio] + label{
     justify-content: center;
     height: 200px;
     max-height: 200px;
-    width: 500px;
+    max-width: 500px;
     min-height: 200px;
     overflow-y: auto;
 }
 
-.topping-variants div{
+.topping {
     /*display: inline-block;*/
     border: 3px outset rgb(133, 112, 93);
-    background-color: #b43300;
     color: #ffffff;
+    background-color: #b43300;
     line-height: 100px;
     margin: 5px;
     width: 100px;
     height: 100px;
-    align-items: center;
     text-align: center;
 }
 
+.toppingClicked {
+    background-color: rgb(246, 75, 75);
+    border: 5px inset rgb(133, 112, 93);
+}
+.topping:hover{
+    background-color: rgb(246, 75, 75);
+    cursor: pointer;
+}
+.topping-list{
+    display: block;
+}
+
+
 @media only screen and (max-width: 400px) {
-    .topping-variants div{
+    .topping{
         font-size: xx-small;
         line-height: 60px;
         width: 60px;
@@ -495,7 +488,7 @@ input[type=radio] + label{
 .hidden {
     display: none;
 }
-/****************/
+/******************/
 
 .pancake-toppings {
     border: 10px outset rgb(133, 112, 93);
@@ -504,19 +497,6 @@ input[type=radio] + label{
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-
-
-.pancake-toppings h3{
-    font-size: 40px;
-    font-family: sans-serif;
-    font-weight: bold;
-    letter-spacing: 7px;
-    padding: 1rem;
-    color: #ff702d;
-    /*transform: rotate(270deg)*/;
- 
 }
 
 .toppings-filter {
@@ -530,7 +510,7 @@ input[type=radio] + label{
 }
 
 
-/* Style the buttons */
+/* Style the filter buttons */
 .btn {
     border: none;
     outline: none;
@@ -549,9 +529,6 @@ input[type=radio] + label{
     color: white;
     }
 
-    
-
-
 @media only screen and (max-width: 800px) {
     .topping-variants {
         border: #c01e18 solid 5px;
@@ -562,6 +539,8 @@ input[type=radio] + label{
     }
 }
 
+
+/*responsive setup for 3 sections*/
 @media (max-width: 900px) {
     .toppings-filter {
         transform: rotate(0deg);
@@ -626,13 +605,17 @@ input[type=radio] + label{
 /*place order*/
 .personalized-result{
     background-color: #b6b9ff;
+    color: rgb(0, 21, 80);
+    padding: 8vh;
+}
+
+.result{
     display: grid;
     place-items: center;
-    color: rgb(0, 21, 80);
-    padding: 5vh;
 }
-.personalized-result>*{
-    margin: 10px;
+.command-head{
+    text-align: center;
+    padding: 20px;
 }
 
 .result-button {
@@ -657,6 +640,34 @@ input[type=radio] + label{
 .result-button:active{
     background-color: #d8c3ff;
 }
+
+
+
+/*Basket / order */
+.interactive-cart {
+    position: fixed;
+    left: 80vw;
+    top: 90vh;
+    text-shadow: 1px 1px 0px #ff0000;
+}
+.fa-basket-shopping {
+    color: rgb(38, 38, 143);
+}
+.cart-value {
+    background-color: rgb(83, 172, 255);
+    color: rgb(255, 232, 232);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 40px;
+    left: 35px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+
 
 /*testimony / partner footer*/
 
@@ -781,11 +792,6 @@ p.profileMsg{
 	margin: 0;
 }
 
-.footer-distributed h3 span{
-	color:  lightseagreen;
-}
-
-
 /* Footer links */
 
 .footer-distributed .footer-links{
@@ -797,7 +803,7 @@ p.profileMsg{
 .footer-distributed .footer-links a{
 	display:inline-block;
 	line-height: 1.8;
-  font-weight:400;
+    font-weight:400;
 	text-decoration: none;
 	color:  inherit;
 }

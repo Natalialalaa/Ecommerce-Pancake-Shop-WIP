@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/aca8ae336c.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pancake Palace</title>
     <link rel="icon" type="image/png" href="visuals/icon-pancake.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 
 <body>
@@ -106,14 +106,14 @@
             <div class="flavours-sub-2" >
                 <img src="Visuals/flavour-matcha.png" id="flavours-pic" alt="">
             </div>
-            <div class="flavours-sub-1">
+            <div class="flavours-sub-1 personalized-style-set">
                 <h3>FLAVOURS</h3>
                 <form action="" class="flavoursButtons">
-                    <input type="radio" id="matcha" name="button-value" value="matcha" onClick="changingToppings()">
+                    <input type="radio" id="matcha" name="button-value" value="matcha" onClick="changingFlavour()">
                     <label for="matcha">Matcha</label>
-                    <input type="radio" id="chocolate" name="button-value" value="chocolate" onClick="changingToppings()">
+                    <input type="radio" id="chocolate" name="button-value" value="chocolate" onClick="changingFlavour()">
                     <label for="chocolate">Chocolate</label>
-                    <input type="radio" id="strawberry" name="button-value" value="strawberry" onClick="changingToppings()">
+                    <input type="radio" id="strawberry" name="button-value" value="strawberry" onClick="changingFlavour()">
                     <label for="strawberry">Strawberry</label>
                    <!-- <input type="submit" value="submit">-->
                 </form>
@@ -121,37 +121,54 @@
         </article>
 
         <article class="pancake-toppings">
-            <div class="toppings-filter">
+            <div class="toppings-filter personalized-style-set">
                 <h3>TOPPINGS</h3>
                 <div id="toppings-head">
-                    <button class="btn" onclick="filterSelection(event)" data-filter="candies">Candies</button>
-                    <button class="btn" onclick="filterSelection(event)" data-filter="fruits">Fruits</button>
-                    <button class="btn" onclick="filterSelection(event)" data-filter="syrups">Syrups</button>
-                    <button class="btn active" onclick="filterSelection(event)" data-filter="all">All</button>
+                    <button class="btn" onclick="filterTopping(event)" data-filter="candies">Candies</button>
+                    <button class="btn" onclick="filterTopping(event)" data-filter="fruits">Fruits</button>
+                    <button class="btn" onclick="filterTopping(event)" data-filter="syrups">Syrups</button>
+                    <button class="btn active" onclick="filterTopping(event)" data-filter="topping">All</button>
                 </div>
             </div>
-            <div class="topping-variants">
-                <div class="all syrups hidden">Maple</div>
-                <div class="all syrups fruits">Marmalade</div>
-                <div class="all syrups">Honey</div>
-                <div class="all syrups">Strawberry</div>
-                <div class="all syrups candies">Chantilly</div>
-                <div class="all syrups">Vanilla</div>
-                <div class="all candies">M&M's</div>
-                <div class="all candies">Oreo</div>
-                <div class="all fruits">Melon</div>
-                <div class="all fruits candies">MilkyWay</div>
-                <div class="all fruits">Banana</div>
-                <div class="all fruits">Cornichon</div>
+            <div>
+                <div class="topping-variants">
+                    <div class="topping syrups fruits">Maple</div>
+                    <div class="topping syrups fruits">Marmalade</div>
+                    <div class="topping syrups">Honey</div>
+                    <div class="topping syrups">Strawberry</div>
+                    <div class="topping syrups candies">Chantilly</div>
+                    <div class="topping syrups">Vanilla</div>
+                    <div class="topping candies">M&M's</div>
+                    <div class="topping candies">Oreo</div>
+                    <div class="topping fruits">Melon</div>
+                    <div class="topping candies">MilkyWay</div>
+                    <div class="topping fruits">Banana</div>
+                    <div class="topping fruits">Cornichon</div>
+                </div>
+                <div class="topping-list">
+                    <h4 class="list-text">
+                    </h4>
+                </div>
             </div>
         </article>
     </main>
     <div class="personalized-result">
-        <button class="result-button">Add to my Basket</button>
-        <h3>craving like more ?</h3>
-        <select>Add quantity : </select>
-    </div>
+        <div class="result">
+            <div class="command-head">
+                <h3>your command </h3>
+                <p class="result-name">is still empty :'&lpar;</p>
+            </div>
+            <div>
+                <button class="result-button">Add to my Basket</button>
+            </div>
+        </div>
 
+        <div class="interactive-cart">
+            <i class="fa-solid fa-basket-shopping fa-3x" ></i>
+            <div class="cart-value">0</div>
+        </div>
+    </div>
+                                       
     <div class="our-partners">
         <div class="testimonyIntro">    
             <h3>Become our partners</h3>
@@ -187,64 +204,43 @@
 </body>
 <!--Temporary Footer, credit : https://codepen.io/slstudios/pen/XbzQVK-->
 <footer class="footer-distributed">
-
 			<div class="footer-left">
-
 				<h3>Pancake Palace</h3>
-
 				<p class="footer-links">
 					<a href="#" class="link-1">Home</a>
-					
 					<a href="#">Blog</a>
-				
-					<a href="#">Pricing</a>
-				
-					<a href="#">About</a>
-					
-					<a href="#">FAQ</a>
-					
+					<a href="#">Pricing</a>				
+					<a href="#">About</a>					
+					<a href="#">FAQ</a>					
 					<a href="#">Contact</a>
 				</p>
-
 				<p class="footer-company-name">Pancake Palace © 2021</p>
 			</div>
-
 			<div class="footer-center">
-
 				<div>
 					<i><img src="Visuals/icon-location.png" class="footer-icon"></i>
 					<p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
 				</div>
-
 				<div>
 					<i><img src="Visuals/icon-phone.png" class="footer-icon"></i>
 					<p>+1.555.555.5555</p>
 				</div>
-
 				<div>
 					<i><img src="Visuals/icon-mail.png" class="footer-icon"></i>
 					<p><a href="mailto:support@company.com">support@company.com</a></p>
 				</div>
-
 			</div>
-
 			<div class="footer-right">
-
 				<p class="footer-company-about">
 					<span>About the company</span>
 					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
 				</p>
-
 				<div class="footer-icons">
-
 					<i><a href="#"><img src="Visuals/icon-facebook.png" href="#"></a></i>
 					<i><a href="#"><img src="Visuals/icon-instagram.png"></a></i>
 					<i><a href="#"><img src="Visuals/icon-twitter.png"></a></i>
-
 				</div>
-
 			</div>
-
 		</footer>
 <script type="text/javascript" src="script.js"></script>
 </html>
