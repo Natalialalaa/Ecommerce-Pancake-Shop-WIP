@@ -9,11 +9,20 @@ login.addEventListener("mouseover", function() {
 });
 
 window.addEventListener("click", function(e) {
-  //console.log(e);
   if (!loginpop.contains(e.target)) {
     loginpop.style.display = 'none';
   }
 });
+
+const createButton = document.getElementsByClassName('create-button')[0];
+
+let scrollToCreate = () => {
+  //scrollBy(x-coord, y-coord)
+  //check position by dev tools -> properties -> offsetTop;
+  window.scrollBy(0, 890);
+}
+
+createButton.addEventListener('click', scrollToCreate);
 
 let userSize;
 /*main article 1: pancake image -> 3 steps sizing, SLIDER value -> tiny, normal, XxL */
@@ -32,24 +41,26 @@ let sizingPancake = () => {
 }
 
 
+
 /*main article 2: flavors image -> 3 images changing -> Radio button value / checked */
-let userTopping = "";
+let userFlavor = "";
 let changingFlavour = () => {
   const flavorsPic = document.getElementById("flavours-pic");
 
   if (document.getElementById("matcha").checked) {
     flavorsPic.src = "Visuals/flavour-matcha.png";
-    userTopping = "matcha";
+    userFlavor = "matcha";
   } else if (document.getElementById("chocolate").checked) { 
     flavorsPic.src = "Visuals/flavour-chocolate.png";
-    userTopping = "chocolate";
+    userFlavor = "chocolate";
   } else if (document.getElementById("strawberry").checked) { 
     flavorsPic.src = "Visuals/flavour-strawberry.png";
-    userTopping = "strawberry";
+    userFlavor = "strawberry";
   }
 
-  return userTopping;
+  return userFlavor;
 }
+
 
 
 /*main article 3: toppings category -> filter Add the "show" class (display:block) to the filtered elements,
@@ -78,32 +89,39 @@ selectedToppings.forEach(selectedTopping => {
 
 /*add and remove topping selection dynamically*/
 let toppingList = [];
-let listText = document.getElementsByClassName('list-text')[0];
-
+let userTopping;
 selectedToppings.forEach(selectedTopping => {
   selectedTopping.addEventListener('click', getToppingName = (e) => {
     let myToppings = e.target.textContent; 
-    if(!toppingList.includes(myToppings)){          //checking weather toppingList array contain clicked value
+
+    if(!toppingList.includes(myToppings)){          //checking whether toppingList array contain clicked value
       toppingList.push(myToppings);               //adding to array if value doesnt exists yet    
       //get the last item from ToppingList array
       const selectedToppingList = toppingList[toppingList.length - 1];
       //then create element with last array value
+      let listText = document.getElementsByClassName('list-text')[0];
       const el = document.createElement('p');
       el.innerHTML = selectedToppingList;
       el.className = 'selected-topping';
       listText.appendChild(el);
-    
-    }else{
-      let removedToppingList = toppingList.splice(toppingList.indexOf(myToppings), 1);  //deleting
+    } else {
+      toppingList.splice(toppingList.indexOf(myToppings), 1);  //deleting
       let selectedToppings = document.querySelectorAll('.selected-topping');
-
-      
-      //iterate all selectedToppings elements, 
-      //remove an element that has an innerText equal to e.target.innerText
-      //or removedToppingList.toString();
+      //.selected-topping element that want to be removed 
+      let removedToppingName = e.target.innerText;
+      //iterate over all .selected-toppings and remove element that have removedToppingName as innerText
+      for (let i = 0; i < selectedToppings.length; i++) {
+        if (selectedToppings[i].innerText === removedToppingName){
+          selectedToppings[i].remove();
+        }
+      }
+      //? or use array.findIndex(function(currentValue, index, arr), thisValue)
     }
+    userTopping = toppingList.toString().toLowerCase();
+    return userTopping;
   })
 });
+
 
 
 /* !! Work still in progress !!*/
@@ -132,21 +150,18 @@ let userCommand = (userSize, userFlavour, userTopping) => {
 */
 
 let userCommand = () => {
-  let size = sizingPancake();
-  let flavour = changingFlavour();
 
   let finalCommand = document.querySelector(".result-name");
 
   //change result-name inner html
-  finalCommand.textContent = "your command is " + size + " " + flavour + " pancake!";
-  console.log("your command is " + size + flavour + " pancake");
-
+  finalCommand.textContent = "your command is " + userSize + " " + userFlavor + " pancake with " + userTopping + " toppings !";
   //load immediately after each main value interaction/changes
 }
 
 
+const addToBasketButton = document.getElementsByClassName('result-button')[0];
+addToBasketButton.addEventListener('click', userCommand);
 /*add to my basket => increase .cart-value*/
-
 /*create my pancakes button auto scroll to personalized pancake section*/
 
 /*become our partner left right button = review carousel*/
