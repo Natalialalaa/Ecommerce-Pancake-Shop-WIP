@@ -14,8 +14,8 @@ window.addEventListener("click", function(e) {
   }
 });
 
+/*create my pancakes button auto scroll to personalized pancake section*/
 const createButton = document.getElementsByClassName('create-button')[0];
-
 let scrollToCreate = () => {
   //scrollBy(x-coord, y-coord)
   //check position by dev tools -> properties -> offsetTop;
@@ -162,6 +162,6 @@ let userCommand = () => {
 const addToBasketButton = document.getElementsByClassName('result-button')[0];
 addToBasketButton.addEventListener('click', userCommand);
 /*add to my basket => increase .cart-value*/
-/*create my pancakes button auto scroll to personalized pancake section*/
+
 
 /*become our partner left right button = review carousel*/
